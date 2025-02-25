@@ -5,6 +5,11 @@ class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         return len(nums) != len(set(nums))
     
+# Time complexity: O(n)
+# Space complexity: O(n)
+
+# Test cases
+    
 s = Solution()
 test_pass_count = 0
 test_cases = [
