@@ -14,3 +14,6 @@ class Solution:
                 return False
             
         return True
+    
+# Time complexity: O(n)
+# Space complexity: O(1)
