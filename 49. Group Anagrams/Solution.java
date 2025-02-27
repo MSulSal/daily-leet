@@ -3,9 +3,11 @@ class Solution {
         Map<String, List<String>> groups = new HashMap<>();
 
         for (String s: strs) {
-            char[] c = s.toCharArray();
-            Arrays.sort(c);
-            String key = new String(c);
+            int[] count = new int[26];
+            for (char c: s.toCharArray()) {
+                count[c - 'a']++;
+            }
+            String key = Arrays.toString(count);
             groups.putIfAbsent(key, new ArrayList<>());
             groups.get(key).add(s);
         }
@@ -13,5 +15,5 @@ class Solution {
     }
 }
 
-// Time complexity: O(n * m * log(m))
-// Space complexity: O(n * m) where n is the number of strings and m is the length of the longest string
+// Time complexity: O(N * K), where N is the length of strs, and K is the maximum length of a string in strs.
+// Space complexity: O(N * K) for storing the groups.

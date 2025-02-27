@@ -3,10 +3,10 @@
  * @return {string[][]}
  */
 var groupAnagrams = function (strs) {
-  groups = {};
+  const groups = {};
 
   for (s of strs) {
-    count = Array(26).fill(0);
+    const count = Array(26).fill(0);
     for (c of s) {
       count[c.charCodeAt(0) - "a".charCodeAt(0)]++;
     }
@@ -17,3 +17,6 @@ var groupAnagrams = function (strs) {
   }
   return Object.values(groups);
 };
+
+// Time complexity: O(n * m)
+// Space complexity: O(n * m)

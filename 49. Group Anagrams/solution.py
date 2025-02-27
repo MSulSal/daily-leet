@@ -12,3 +12,6 @@ class Solution:
                 count[ord(c) - ord("a")] += 1
             groups[tuple(count)].append(s)
         return list(groups.values())
+    
+# Time complexity: O(NK)
+# Space complexity: O(NK)
