@@ -7,7 +7,7 @@ class Solution:
         products = [1] * len(nums)
 
         for i in range(len(nums)):
-            products[i] *= product
+            products[i] = product
             product *= nums[i]
 
         product = 1
@@ -17,3 +17,6 @@ class Solution:
             product *= nums[i]
 
         return products
+    
+# Time complexity: O(n)
+# Space complexity: O(1)
