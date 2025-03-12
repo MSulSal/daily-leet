@@ -1,21 +1,25 @@
-#include <unordered_set>
+#include <vector>
+#include <unordered_map>
 
 using namespace std;
 
 class Solution {
     public:
-        bool containsDuplicate(vector<int>& nums) {
-            unordered_set<int> seen;
-            for (int num: nums) {
-                if (seen.count(num)) {
-                    return true;
+        vector<int> twoSum(vector<int>& nums, int target) {
+            unordered_map<int, int> prev;
+    
+            for (int i = 0; i < nums.size(); i++) {
+                int num = nums[i];
+                int diff = target - num;
+                if (prev.find(diff) != prev.end()) {
+                    return {prev[diff], i};
                 }
-                seen.insert(num);
+                prev[num] = i;
             }
-            return false;
+    
+            return {};
         }
 };
 
-// Time Complexity: O(N)
-// Space Complexity: O(N)
-
+// Time Complexity: O(n)
+// Space Complexity: O(n)
